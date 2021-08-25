@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title></title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!--!google font start-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <!--!google font over-->
+
+        <link rel="stylesheet" href="stylesheet.css" />
+    </head>
+    <body>
+        <div class="title_container">
+            <h1 class="title">PokeSerch</h1>
+        </div>
+        <div class="serch_container">
+            <input type="text" class="pokeName_serch" placeholder="By Name" autocapitalize="none" />
+            <div class="btnSerch">
+                <svg
+                    id="pokeball_svg"
+                    data-name="pokeball_svg"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                >
+                    <title>PokeSerch</title>
+                    <path
+                        class="bottom"
+                        d="M10,13.08a3.09,3.09,0,0,1-2.88-2H1.25A8.84,8.84,0,0,0,10,18.82a8.84,8.84,0,0,0,8.75-7.73H12.88A3.09,3.09,0,0,1,10,13.08Z"
+                    />
+                    <circle class="button" cx="10" cy="10" r="2.01" />
+                    <path
+                        class="top"
+                        d="M10,1.18A8.84,8.84,0,0,0,1.25,8.91H7.12a3.08,3.08,0,0,1,5.76,0h5.87A8.84,8.84,0,0,0,10,1.18Z"
+                    />
+                    <path
+                        d="M10,.12A9.87,9.87,0,1,0,17,3,9.85,9.85,0,0,0,10,.12Zm6.23,16.11a8.79,8.79,0,0,1-12.46,0,8.72,8.72,0,0,1-2.52-5.14H7.12a3.08,3.08,0,0,0,5.76,0h5.87A8.72,8.72,0,0,1,16.23,16.23ZM8,10a2,2,0,1,1,2,2A2,2,0,0,1,8,10Zm4.89-1.09a3.08,3.08,0,0,0-5.76,0H1.25A8.84,8.84,0,0,1,10,1.18a8.84,8.84,0,0,1,8.75,7.73Z"
+                    />
+                </svg>
+            </div>
+            <input type="number" placeholder="By Id" class="pokeId_serch" min="1" max="898" />
+        </div>
+
+        <section>
+            <div class="pokeCard">
+                <div class="pokeImg"></div>
+                <div class="pokeId_container">
+                    <h4 class="pokeId_text">#<span class="pokeId"></span></h4>
+                    <h1 class="pokeName"></h1>
+                    <h3 class="pokeType"></h3>
+                </div>
+                <div class="stats_container">
+                    <div class="height_cointainer">
+                        <h4 class="pokeHeight_title">Height</h4>
+                        <h4 class="pokeHeight"></h4>
+                    </div>
+
+                    <div class="weight_container">
+                        <h4 class="pokeWidth_title">Weight</h4>
+                        <h4 class="pokeWeight"></h4>
+                    </div>
+                </div>
+                <div class="pokeFlavor_contrainer">
+                    <p class="pokeFlavor"></p>
+                </div>
+            </div>
+        </section>
+        <div class="btns_container">
+            <div class="btn btn_previous"><h4>PREVIOUS</h4></div>
+            <div class="btn btn_next"><h4>NEXT</h4></div>
+        </div>
+        <div class="alert_container">
+            <div class="alert_display">
+                <h2 class="alert_display_title">That Incorrect</h2>
+                <h3 class="alert_display_text">
+                    Please introduce a valid name, or number between 1 and 898
+                </h3>
+                <div class="btn_alert_container">
+                    <div class="btn" id="alert_btn"><h3 class="btn_alert_text">OK</h3></div>
+                </div>
+            </div>
+        </div>
+        <script src="pokeApp.js" async defer></script>
+    </body>
+</html>
