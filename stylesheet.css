@@ -105,6 +105,10 @@ img {
   transition: all 0.5s ease-in-out;
   border: none;
   background: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .serch_container .btnSerch:hover {

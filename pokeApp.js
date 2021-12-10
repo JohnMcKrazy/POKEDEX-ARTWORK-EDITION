@@ -70,7 +70,14 @@ const serchFunction = (e) => {
     console.log(pokeNameSerch.value);
     let myName = pokeNameSerch.value.toLowerCase();
     if (pokeNameSerch.value === '' && pokeIdSerch.value === '') {
-        prompt('You need to introduce for a proper serch');
+        alertDisplay.style.display = 'block';
+        alertDisplay.style.opacity = 0;
+        alertDisplay.animate([{ opacity: '0' }, { opacity: '1' }], {
+            duration: 500,
+            fill: 'forwards',
+        });
+        let pokeSerchLength = pokemonSerch.length;
+        myCurrentPokemon = pokemonSerch[pokeSerchLength - 1];
     } else if (pokeIdSerch.value === '') {
         let valueName = myName;
         myCurrentPokemon = valueName;
@@ -81,9 +88,7 @@ const serchFunction = (e) => {
 
     catchEmAll(myCurrentPokemon);
 
-    pokeIdSerch.value = '';
-    pokeNameSerch.value = '';
-    console.log(myCurrentPokemon);
+    //*console.log(myCurrentPokemon);
 };
 const showAlert = () => {
     alertDisplay.animate([{ opacity: '1' }, { opacity: '0' }], {
@@ -101,16 +106,16 @@ const catchEmAll = (id) => {
         .then((data) => {
             myCurrentPokemon = data.id;
             pokemonSerch.push(myCurrentPokemon);
-            console.log(pokemonSerch);
-            console.log(data);
-            console.log(data.name);
-            console.log(data.id);
-            console.log(data.height + 'ft');
-            console.log(data.weight + 'lb');
-            console.log(data.types[0].type.name);
-            console.log(data.sprites);
-            console.log(data.types);
-            console.log(data.sprites.other['official-artwork']['front_default']);
+            //*console.log(pokemonSerch);
+            //*console.log(data);
+            //*console.log(data.name);
+            //*console.log(data.id);
+            //*console.log(data.height + 'ft');
+            //*console.log(data.weight + 'lb');
+            //*console.log(data.types[0].type.name);
+            //*console.log(data.sprites);
+            //*console.log(data.types);
+            //*console.log(data.sprites.other['official-artwork']['front_default']);
             let artworkImg = data.sprites.other['official-artwork']['front_default'];
             let firstType = data.types[0].type.name;
             divImg.appendChild(newImg);
@@ -126,7 +131,10 @@ const catchEmAll = (id) => {
             pokeHeight.innerText = data.height + 'ft';
             pokeWeight.innerText = data.weight + 'lb';
 
-            console.log(data);
+            //*console.log(data);
+
+            pokeIdSerch.value = '';
+            pokeNameSerch.value = '';
         })
         .catch((err) => {
             let pokeSerchLength = pokemonSerch.length;
@@ -137,16 +145,16 @@ const catchEmAll = (id) => {
     fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
         .then((rawSpecies) => rawSpecies.json())
         .then((dataSpecies) => {
-            console.log(dataSpecies);
-            console.log(dataSpecies['flavor_text_entries']);
-            console.log(dataSpecies['flavor_text_entries'][1]);
-            console.log(dataSpecies['flavor_text_entries'][1]['flavor_text']);
+            //*console.log(dataSpecies);
+            //*console.log(dataSpecies['flavor_text_entries']);
+            //*console.log(dataSpecies['flavor_text_entries'][1]);
+            //*console.log(dataSpecies['flavor_text_entries'][1]['flavor_text']);
 
             let myFirstFlavor = dataSpecies['flavor_text_entries'][1]['flavor_text'].split('\n');
             let textFirstFlavor = myFirstFlavor.join(' ');
             let myFlavor = textFirstFlavor.split('');
             let textFlavor = myFlavor.join(' ');
-            console.log(textFlavor);
+            //*console.log(textFlavor);
 
             pokeFlavor.innerText = textFlavor;
         })
