@@ -103,6 +103,8 @@ img {
   height: 2rem;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  border: none;
+  background: none;
 }
 
 .serch_container .btnSerch:hover {
@@ -448,4 +450,3 @@ img {
   -webkit-animation: pop 0.5s ease-in-out 1 forwards;
           animation: pop 0.5s ease-in-out 1 forwards;
 }
-/*# sourceMappingURL=stylesheet.css.map */

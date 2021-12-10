@@ -64,7 +64,8 @@ const previous = () => {
     }
 };
 
-const serchFunction = () => {
+const serchFunction = (e) => {
+    e.preventDefault();
     console.log(pokeIdSerch.value);
     console.log(pokeNameSerch.value);
     let myName = pokeNameSerch.value.toLowerCase();
